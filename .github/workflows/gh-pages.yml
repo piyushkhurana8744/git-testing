@@ -1,4 +1,4 @@
-name: movie
+name: Delpoy movie
 
 on:
   push:
