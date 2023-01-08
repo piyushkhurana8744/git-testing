@@ -14,6 +14,7 @@ export default function Home({users}) {
           <img src={el.avatar} alt="" width="200px" height={"200px"}/>
           <h1>{`${el.first_name} ${el.last_name}`}</h1>
           <h1>{el.email}</h1>
+          <h1>hello</h1>
         </div></Link>)}
       </div>
     </>
