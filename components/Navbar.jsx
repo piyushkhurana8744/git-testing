@@ -2,9 +2,10 @@ import React from 'react'
 import Link from "next/link"
 const Navbar = () => {
   return (
-    <div style={{display:"flex",justifyContent:"space-around",backgroundColor:"teal",color:"white"}}>
-    <Link href="/Home"><h1>Home</h1></Link>
-    <Link href="/Project"><h1>Project</h1></Link>      
+    <div style={{display:"flex",justifyContent:"space-around",backgroundColor:"teal"}}>
+       <Link href="/"><h1 style={{fontSize:"30px",fontWeight:"600",color:"white"}}>Home</h1></Link>
+      <Link href="/Movie"><h1 style={{fontSize:"30px",fontWeight:"600",color:"white"}}>Movie</h1></Link>
+      <Link href="/wishlist"><h1 style={{fontSize:"30px",fontWeight:"600",color:"white"}}>Wishlist</h1></Link>
     </div>
   )
 }
