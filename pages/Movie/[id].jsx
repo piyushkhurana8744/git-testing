@@ -14,7 +14,15 @@ const SingleMovie = ({movie}) => {
     </div>
   )
 }
-export const getServerSideProps=async(context)=>{
+export async function getStaticPaths() {
+  let res=await fetch(`https://movies-database-gold.vercel.app/movies`)
+  let data=await res.json()
+  return {
+    paths: data.map((el)=>({params:{id:String(el.id)}})),
+    fallback: false, // can also be true or 'blocking'
+  }
+}
+export const getStaticProps=async(context)=>{
 let id=context.params.id
 console.log(id)
 let res=await fetch(`https://movies-database-gold.vercel.app/movies/${id}`)

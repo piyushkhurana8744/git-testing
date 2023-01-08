@@ -10,7 +10,7 @@ const Movie = ({movie}) => {
     </div>
   )
 }
-export const getServerSideProps=async()=>{
+export const getStaticProps=async()=>{
   let res=await fetch(`https://movies-database-gold.vercel.app/movies`)
       let data=await res.json()
       return{

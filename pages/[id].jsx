@@ -10,7 +10,15 @@ const Singleuser = ({user}) => {
     </div>
   )
 }
-export const getServerSideProps=async(context)=>{
+export async function getStaticPaths() {
+  let res=await fetch(`https://reqres.in/api/users`)
+  let data=await res.json()
+  return {
+    paths: data.data.map((el)=>({params:{id:String(el.id)}})),
+    fallback: false, // can also be true or 'blocking'
+  }
+}
+export const getStaticProps=async(context)=>{
   const id=context.params.id
   let res=await fetch(`https://reqres.in/api/users/${id}`)
   let data=await res.json()

@@ -19,7 +19,7 @@ export default function Home({users}) {
     </>
   )
 }
-export const getServerSideProps=async()=>{
+export const getStaticProps=async()=>{
   let res=await fetch(`https://reqres.in/api/users?page=1`)
   let data=await res.json()
   return{
