@@ -5,7 +5,7 @@ const Project = ({project}) => {
   return (
     <div >
         <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",width:"90%", margin:"auto",marginTop:"20px",gap:"20px"}}>
-        {project.map(el=><div style={{textAlign:"center"}}>
+        {project.map(el=><div key={el.id} style={{textAlign:"center"}}>
         <img src="https://schemazone.com/wp-content/uploads/2021/03/Project-Manager.jpg" alt="" style={{width:"300px"}}/>
         <h3>{el.name}</h3>
         <Link href={el.html_url}><button style={{padding:"10px 60px 10px 60px",backgroundColor:"#dc153d",color:"white",fontWeight:"600",fontSize:"20px",border:"none",borderRadius:"20px",marginTop:"20px"}}>Go to github</button></Link>
