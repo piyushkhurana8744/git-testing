@@ -5,7 +5,7 @@ const Movie = ({movie}) => {
   console.log(movie)
   return (
     <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"30px",marginTop:"30px"}}>
-      {movie.map(el=><Link href={`/Movie/${el.id}`}><Moviecard Title={el.Title} Released={el.Released} image={el.Images[2]}
+      {movie.map(el=><Link key={el.id} href={`/Movie/${el.id}`}><Moviecard Title={el.Title} Released={el.Released} image={el.Images[2]}
       imdbRating={el.imdbRating} Runtime={el.Runtime}/></Link>)}
     </div>
   )

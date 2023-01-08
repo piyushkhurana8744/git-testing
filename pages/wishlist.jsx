@@ -29,7 +29,7 @@ const WishList = () => {
          
         </Thead>
         <Tbody>
-          {WishList.map(el=><Tr>
+          {WishList.map(el=><Tr key={el.id}>
             <Td>{el.id}</Td>
             <Td>{el.Title}</Td>
             <Td>{el.imdbRating}</Td>
